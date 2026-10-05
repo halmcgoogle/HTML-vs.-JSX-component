@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ==================================================
+         PAGE SETUP
+         Invisible settings: text encoding, mobile scaling,
+         browser tab title, fonts and stylesheet.
+         ================================================== -->
     <meta charset="UTF-8">
+    <!-- Makes the page scale correctly on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Text shown in the browser tab -->
     <title>Pricing Plans — HTML version</title>
+
+    <!-- Fonts: connect early to Google Fonts so text loads faster -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts: load Inter in Regular (400), Medium (500), Semibold (600), Bold (700) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles: all colors, spacing and type live in styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- ==================================================
+         PAGE LABEL
+         Small pill pinned to the top of the screen that
+         says which version of the component you're viewing.
+         ================================================== -->
     <p class="page-label"><strong>HTML version</strong> — static markup</p>
+
+    <!-- ==================================================
+         PRICING CARDS
+         Row that holds the plan cards side by side.
+         ================================================== -->
     <div class="cards-container">
+
+        <!-- ---------- Card 1: Hobby (free plan) ---------- -->
         <div class="card">
+            <!-- Top of card: title, price and feature list -->
             <div class="card-top">
+                <!-- Plan name -->
                 <h3 class="card-title">Hobby</h3>
+                <!-- Price -->
                 <p class="card-price">
                     <span class="card-price-amount">Free</span>
                 </p>
+                <!-- Feature list -->
                 <div class="card-content">
+                    <!-- Intro line above the list -->
                     <p class="includes-text">Includes:</p>
                     <ul class="features-list">
+                        <!-- Each <li> is one feature row: checkmark + text -->
                         <li>
                             <span class="checkmark">✓</span>
                             No credit card required
@@ -36,18 +66,27 @@
                     </ul>
                 </div>
             </div>
+            <!-- Button: light "secondary" style, sits at the bottom of the card -->
             <button class="download-button secondary">Download</button>
         </div>
+
+        <!-- ---------- Card 2: Pro (paid plan) ---------- -->
         <div class="card">
+            <!-- Top of card: title, price and feature list -->
             <div class="card-top">
+                <!-- Plan name -->
                 <h3 class="card-title">Pro</h3>
+                <!-- Price: amount + smaller billing period -->
                 <p class="card-price">
                     <span class="card-price-amount">$20</span>
                     <span class="card-price-period">/mo.</span>
                 </p>
+                <!-- Feature list -->
                 <div class="card-content">
+                    <!-- Intro line above the list -->
                     <p class="includes-text">Everything in Hobby, plus:</p>
                     <ul class="features-list">
+                        <!-- Each <li> is one feature row: checkmark + text -->
                         <li>
                             <span class="checkmark">✓</span>
                             Extended limits on Agent
@@ -67,8 +106,51 @@
                     </ul>
                 </div>
             </div>
+            <!-- Button: dark "primary" style to highlight the main action -->
             <button class="download-button primary">Get Pro</button>
         </div>
+
+        <!-- ---------- Card 3: Enterprise (custom plan) ----------
+             New card: copy of the card structure above with new text.
+             Placed inside .cards-container so it sits in the same row. -->
+        <div class="card">
+            <!-- Top of card: title, price and feature list -->
+            <div class="card-top">
+                <!-- Plan name -->
+                <h3 class="card-title">Enterprise</h3>
+                <!-- Price: custom quote, so no billing period -->
+                <p class="card-price">
+                    <span class="card-price-amount">Custom</span>
+                </p>
+                <!-- Feature list -->
+                <div class="card-content">
+                    <!-- Intro line above the list -->
+                    <p class="includes-text">Everything in Pro, plus:</p>
+                    <ul class="features-list">
+                        <!-- Each <li> is one feature row: checkmark + text -->
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Team billing and admin
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            SSO and access controls
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Usage analytics
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Priority support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Button: light "secondary" style, sits at the bottom of the card -->
+            <button class="download-button secondary">Contact Sales</button>
+        </div>
+
     </div>
 </body>
 </html>
