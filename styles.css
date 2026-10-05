@@ -1,148 +1,223 @@
+/* ==================================================
+   STYLES — Pricing Cards
+   --------------------------------------------------
+   Contents
+   1. Reset
+   2. Page
+   3. Card layout
+   4. Card text (title, price, features)
+   5. Buttons
+   6. Page label
+   --------------------------------------------------
+   Color key
+   #26251e              Main text (warm near-black)
+   rgba(38,37,30,0.5)   Muted text (50% of main text)
+   #f7f7f4              Page background
+   #f2f1ed              Card background
+   #e6e5e0 / #D8D6CE    Secondary button / hover
+   #111 / #333          Primary button / hover
+   ================================================== */
+
+
+/* ==================================================
+   1. RESET
+   Clears browser default spacing so every element
+   starts from zero. Padding is counted inside the
+   width (like Figma's default box behavior).
+   ================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ==================================================
+   2. PAGE
+   Sets the font and background, and centers the
+   cards in the middle of the screen.
+   ================================================== */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Inter, then system fallbacks */
     background-color: #f7f7f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    display: flex;             /* Center content... */
+    justify-content: center;   /* ...horizontally */
+    align-items: center;       /* ...and vertically */
+    min-height: 100vh;         /* At least full screen height */
+    padding: 20px;             /* Breathing room at screen edges */
 }
 
+
+/* ==================================================
+   3. CARD LAYOUT
+   ================================================== */
+
+/* Row of cards — like a horizontal Auto Layout frame */
 .cards-container {
     display: flex;
-    flex-direction: row;
-    gap: 24px;
-    flex-wrap: nowrap;
+    flex-direction: row;       /* Cards sit side by side */
+    gap: 24px;                 /* Space between cards */
+    flex-wrap: nowrap;         /* Never wrap onto a new line */
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start;   /* Align cards to the top */
 }
 
+/* Single card — vertical stack, fixed width */
 .card {
     display: flex;
-    flex-direction: column;
-    min-height: 380px;
+    flex-direction: column;    /* Stack contents top to bottom */
+    min-height: 380px;         /* Keeps cards the same height */
     background-color: #f2f1ed;
     border-radius: 4px;
     padding: 16px;
     width: 320px;
-    flex-shrink: 0;
+    flex-shrink: 0;            /* Card won't squash on small screens */
 }
 
+/* Top section of card (title, price, features) */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+
+/* ==================================================
+   4. CARD TEXT
+   ================================================== */
+
+/* Plan name — e.g. "Hobby", "Pro" */
 .card-title {
     font-size: 22px;
     line-height: 28px;
-    font-weight: 400;
+    font-weight: 400;          /* Regular */
     color: #26251e;
-    margin-bottom: 8px;
+    margin-bottom: 8px;        /* Space above price */
 }
 
+/* Price row — holds amount + period on one baseline */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
     display: inline-flex;
-    align-items: baseline;
+    align-items: baseline;     /* "$20" and "/mo." share a text baseline */
 }
 
+/* Price amount — e.g. "Free", "$20" */
 .card-price-amount {
     font-size: 22px;
     font-weight: 400;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Billing period — e.g. "/mo." (smaller) */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Feature area — gap between list and button */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* Intro line — e.g. "Includes:" */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
-    margin: 16px 0px;
+    margin: 16px 0px;          /* 16px above and below, none on sides */
 }
 
+/* Feature list — removes default bullets */
 .features-list {
     list-style: none;
     padding: 0;
 }
 
+/* Feature row — checkmark and text on one line */
 .features-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+    align-items: center;       /* Vertically center checkmark with text */
+    margin-bottom: 8px;        /* Space between rows */
     font-size: 16px;
     color: #26251e;
 }
 
+/* Checkmark icon (✓) before each feature */
 .checkmark {
     color: #26251e;
     font-size: 14px;
-    margin-right: 10px;
+    margin-right: 10px;        /* Gap between icon and text */
     font-weight: 400;
 }
 
+
+/* ==================================================
+   5. BUTTONS
+   Base style = secondary (light) button.
+   Add class "primary" for the dark button.
+   ================================================== */
+
+/* Base / secondary button — light pill */
 .download-button {
-    margin-top: auto;
-    width: fit-content;
+    margin-top: auto;          /* Pushes button to bottom of card */
+    width: fit-content;        /* Width hugs the label */
     background-color: #e6e5e0;
     border: none;
-    border-radius: 999px;
-    padding: 14px 24px;
+    border-radius: 999px;      /* Fully rounded pill shape */
+    padding: 14px 24px;        /* 14px top/bottom, 24px left/right */
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 500;          /* Medium */
     color: #333;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    cursor: pointer;           /* Hand cursor on hover */
+    transition: background-color 0.2s ease; /* Smooth color change */
 }
 
+/* Secondary — hover (mouse over) */
 .download-button:hover {
     background-color: #D8D6CE;
 }
 
+/* Secondary — active (while pressed) */
 .download-button:active {
     background-color: #D8D6CE;
 }
 
+/* Primary button — dark pill with white text */
 .download-button.primary {
     background-color: #111;
     color: #fff;
 }
 
+/* Primary — hover */
 .download-button.primary:hover {
     background-color: #333;
 }
 
+/* Primary — active (while pressed) */
 .download-button.primary:active {
     background-color: #333;
 }
 
+
+/* ==================================================
+   6. PAGE LABEL
+   Pill pinned to the top center of the screen that
+   names the version being viewed.
+   ================================================== */
 .page-label {
-    position: fixed;
+    position: fixed;           /* Stays put when scrolling */
     top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;                 /* Move left edge to screen center... */
+    transform: translateX(-50%); /* ...then shift back half its width to center it */
     font-size: 14px;
     color: #666;
     background: #fff;
     padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft drop shadow */
 }
 
+/* Bold part of the label — slightly darker */
 .page-label strong {
     color: #333;
 }
