@@ -198,7 +198,32 @@ body {
     background-color: #333;
 }
 
+.download-button.secondary {
+    background-color: #e6e5e0;
+    color: #333;
+}
 
+.download-button.secondary:hover {
+    background-color: #D8D6CE;
+}
+
+.download-button.secondary:active {
+    background-color: #D8D6CE;
+}
+
+.download-button.tertiary {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #c2c1ba;
+}
+
+.download-button.tertiary:hover {
+    background-color: #c2c1ba;
+}
+
+.download-button.tertiary:active {
+    background-color: #c2c1ba;
+}
 /* ==================================================
    6. PAGE LABEL
    Pill pinned to the top center of the screen that
